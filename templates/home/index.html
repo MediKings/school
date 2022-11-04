@@ -156,53 +156,38 @@
         </div><!-- .container -->
     </section><!-- .about-section -->
 
-    <section class="featured-courses vertical-column courses-wrap">
+    <div class="clients-logo">
         <div class="container">
-            <div class="row mx-m-25">
-                <div class="col-12 px-25">
-                    <header class="heading flex flex-wrap justify-content-between align-items-center">
-                        <h2 class="entry-title">Universités</h2>
+            <div class="row">
+                <div class="col-12">
+                    <header class="heading flex justify-content-between align-items-center">
+                        <h2 class="entry-title text-center pt-3">Nos partenaires</h2>
                     </header><!-- .heading -->
                 </div><!-- .col -->
+                <div class="col-12 flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
+                    <div class="logo-wrap">
+                        <img src="/static/images/logo-1.png" alt="">
+                    </div><!-- .logo-wrap -->
 
-                {% for univ in univs %}
-                <div class="col-12 col-md-6 col-lg-4 px-25">
-                    <div class="course-content">
-                        <figure class="course-thumbnail">
-                            <a href="{% url 'univ-single' univ.slug %}"><img src="{{univ.picture.url}}" alt="{{univ.name}}"></a>
-                        </figure><!-- .course-thumbnail -->
+                    <div class="logo-wrap">
+                        <img src="/static/images/logo-2.png" alt="">
+                    </div><!-- .logo-wrap -->
 
-                        <div class="course-content-wrap">
-                            <header class="entry-header">
-                                <h2 class="entry-title"><a href="{% url 'univ-single' univ.slug %}">{{univ.name}}</a></h2>
-                            </header><!-- .entry-header -->
+                    <div class="logo-wrap">
+                        <img src="/static/images/logo-3.png" alt="">
+                    </div><!-- .logo-wrap -->
 
-                            <!-- <footer class="entry-footer flex justify-content-between align-items-center">
-                                <div class="course-cost">
-                                    $45 <span class="price-drop">$68</span>
-                                </div>
+                    <div class="logo-wrap">
+                        <img src="/static/images/logo-4.png" alt="">
+                    </div><!-- .logo-wrap -->
 
-                                <div class="course-ratings flex justify-content-end align-items-center">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-o"></span>
-
-                                    <span class="course-ratings-count">(4 votes)</span>
-                                </div>
-                            </footer> -->
-                        </div><!-- .course-content-wrap -->
-                    </div><!-- .course-content -->
-                </div><!-- .col -->
-                {% endfor %}
-
-                <div class="col-12 px-25 flex justify-content-center">
-                    <a class="btn" href="#">voir toute la liste</a>
+                    <div class="logo-wrap">
+                        <img src="/static/images/logo-5.png" alt="">
+                    </div><!-- .logo-wrap -->
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
-    </section><!-- .courses-wrap -->
+    </div><!-- .clients-logo -->
 
     <section class="latest-news-events">
         <div class="container">
@@ -351,32 +336,30 @@
         </div><!-- .gallery-wrap -->
     </section><!-- .home-gallery -->
 
-    <div class="clients-logo">
+    <section class="featured-courses vertical-column courses-wrap">
         <div class="container">
-            <div class="row">
-                <div class="col-12 flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
-                    <div class="logo-wrap">
-                        <img src="/static/images/logo-1.png" alt="">
-                    </div><!-- .logo-wrap -->
+            <div class="row mx-m-25">
+                <div class="col-12 px-25">
+                    <header class="heading flex flex-wrap justify-content-between align-items-center">
+                        <h5>Voir les universités</h5>
+                    </header><!-- .heading -->
+                </div><!-- .col -->
 
-                    <div class="logo-wrap">
-                        <img src="/static/images/logo-2.png" alt="">
-                    </div><!-- .logo-wrap -->
+                {% for univ in univs %}
+                <div class="col-12 px-25">
+                    <ul class="list-group">
+                        <li class="list-group-item p-2">
+                            <a href="{% url 'univ-single' univ.slug %}">{{univ.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+                {% endfor %}
 
-                    <div class="logo-wrap">
-                        <img src="/static/images/logo-3.png" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="/static/images/logo-4.png" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="/static/images/logo-5.png" alt="">
-                    </div><!-- .logo-wrap -->
+                <div class="col-12 px-25 flex justify-content-center">
+                    <a class="btn" href="{% url 'univs' %}">voir toutes</a>
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
-    </div><!-- .clients-logo -->
+    </section><!-- .courses-wrap -->
         
 {% endblock %}
