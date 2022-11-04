@@ -1,0 +1,48 @@
+{% extends 'home/base.html' %}
+<!-- {% block title %}Medi Social{% endblock %} -->
+{% block content %}
+<div class="contact-page">
+    <div class="page-header">
+        
+        {% include 'includes/header.html' %}
+
+    </div><!-- .page-header -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs">
+                    <ul class="flex flex-wrap align-items-center p-0 m-0">
+                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li>Inscription</li>
+                    </ul>
+                </div><!-- .breadcrumbs -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+
+        <div class="row justify-content-between">
+
+            <div class="col-12 col-lg-6">
+                <div class="contact-form">
+                    <h3>Inscription</h3>
+
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {% if messages %}
+                        {% for message in messages %}
+                        <p class="bg-danger p-2 text-white">{{message}}</p>
+                        {% endfor %}
+                        {% endif %}
+                        <input type="text" name="username" placeholder="Pseudo">
+                        <input type="text" name="first_name" placeholder="Prénom">
+                        <input type="text" name="last_name" placeholder="Nom">
+                        <input type="email" name="email" placeholder="email">
+                        <input type="password" name="password" placeholder="Mot de passe">
+                        <input type="submit" value="Inscription">
+                    </form>
+                </div><!-- .contact-form -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+
+{% endblock %}

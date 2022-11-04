@@ -1,0 +1,70 @@
+{% extends 'home/base.html' %}
+<!-- {% block title %}Medi Social{% endblock %} -->
+{% block content %}
+
+    <div class="page-header bg-dark">
+        
+        {% include 'includes/header.html' %}
+
+    </div><!-- .page-header -->
+
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="single-course-wrap">
+
+                    <div class="related-courses">
+                        <header class="entry-heading flex flex-wrap justify-content-between align-items-center">
+                            <h2 class="entry-title">{{deps.count}} Departements</h2>
+
+                            <!-- <a href="#">View all</a> -->
+                        </header><!-- .entry-heading -->
+
+                        <div class="row mx-m-25">
+                            {% for dep in deps %}
+                            <div class="col-12 col-md-6 col-lg-4 px-25">
+                                <div class="course-content">
+                                    <div class="course-content-wrap">
+                                        <header class="entry-header">
+                                            <h2 class="entry-title"><a href="{% url 'proms' dep.slug %}">{{dep.name}}</a></h2>
+                                        </header>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div><!-- .row -->
+                    </div><!-- .related-course -->
+                </div><!-- .single-course-wrap -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+
+    <div class="clients-logo">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
+                    <div class="logo-wrap">
+                        <img src="images/logo-1.png" alt="">
+                    </div><!-- .logo-wrap -->
+
+                    <div class="logo-wrap">
+                        <img src="images/logo-2.png" alt="">
+                    </div><!-- .logo-wrap -->
+
+                    <div class="logo-wrap">
+                        <img src="images/logo-3.png" alt="">
+                    </div><!-- .logo-wrap -->
+
+                    <div class="logo-wrap">
+                        <img src="images/logo-4.png" alt="">
+                    </div><!-- .logo-wrap -->
+
+                    <div class="logo-wrap">
+                        <img src="images/logo-5.png" alt="">
+                    </div><!-- .logo-wrap -->
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .clients-logo -->
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'home/base.html' %}
+<!-- {% block title %}Medi Social{% endblock %} -->
+{% block content %}
+<div class="contact-page">
+    <div class="page-header">
+        
+        {% include 'includes/header.html' %}
+
+    </div><!-- .page-header -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs">
+                    <ul class="flex flex-wrap align-items-center p-0 m-0">
+                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li>Connexion</li>
+                    </ul>
+                </div><!-- .breadcrumbs -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+
+        <div class="row justify-content-between">
+
+            <div class="col-12 col-lg-6">
+                <div class="contact-form">
+                    <h3>Connexion</h3>
+
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {% if messages %}
+                        {% for message in messages %}
+                        <p class="bg-danger p-2 text-white">{{message}}</p>
+                        {% endfor %}
+                        {% endif %}
+                        <input type="text" name="username_email" placeholder="Pseudo ou email">
+                        <input type="password" name="password" placeholder="Mot de passe">
+                        <input type="submit" value="Connexion">
+                    </form>
+                </div><!-- .contact-form -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+
+{% endblock %}
