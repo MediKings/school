@@ -199,12 +199,6 @@ a:hover, a:active {
     color: #19c880;
 }
 
-@media screen and (min-width: 576px){
-    /*.site-title {*/
-        /*font-size: 112px;*/
-    /*}*/
-}
-
 /*
   Hamburger Menu
 ----------------------------------------*/
@@ -222,7 +216,7 @@ a:hover, a:active {
     position: absolute;
     height: 2px;
     width: 100%;
-    background: #fff;
+    background: #333;
     border-radius: 10px;
     opacity: 1;
     left: 0;
@@ -1173,8 +1167,14 @@ a.btn:hover {
     text-align: center;
 }
 
+@media screen and (max-width: 993px){
+    .page-header h1 {
+        font-size: 2rem;
+    }
+}
+
 .banner-univ {
-    margin-top: 115px;
+    margin-top: 100px;
 }
 
 /*--------------------------------------------------------------
