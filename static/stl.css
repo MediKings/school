@@ -175,7 +175,6 @@ a:hover, a:active {
 # Nav Bar
 --------------------------------*/
 .nav-bar {
-    padding: 20px 0;
     background: rgba(255,255,255,.1);
 }
 
@@ -1174,6 +1173,10 @@ a.btn:hover {
     text-align: center;
 }
 
+.banner-univ {
+    margin-top: 115px;
+}
+
 /*--------------------------------------------------------------
 # Breadcrumb
 --------------------------------------------------------------*/
@@ -1508,8 +1511,8 @@ a.btn:hover {
 }
 
 .course-author img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     margin-right: 20px;
 }
@@ -2642,6 +2645,11 @@ ul.author-social-profile li:hover .fa {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+footer {
+    margin-top: 10px;
+    border-top: 1px solid #ebebeb;
+}
+
 .footer-widgets {
     padding: 60px 0;
     color: #757686;

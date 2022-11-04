@@ -6,41 +6,21 @@
         
         {% include 'includes/header.html' %}
 
-        <div class="page-header-overlay" style="background-image: url('{{univ.picture.url}}');">
-            <img src="{{univ.picture.ur}}" alt="{{univ.name}}" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 500px; object-fit: cover;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <header class="entry-header">
-                            <h1 class="entry-title">{{univ.name}}</h1>
-
-                            <!-- <div class="ratings flex justify-content-center align-items-center">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o"></i>
-                                <span>(4 votes)</span>
-                            </div> -->
-                        </header><!-- .entry-header -->
-                    </div><!-- .col -->
-                </div><!-- .row -->
-            </div><!-- .container -->
-        </div><!-- .page-header-overlay -->
     </div><!-- .page-header -->
 
+    <div class="banner-univ" style="height: 350px; background-image: url('{{univ.picture.url}}'); background-size: cover;">
+        <div class="container h-100">
+            <div class="d-flex justify-content-center align-items-end h-100">
+                <div class="col-12">
+                    <h2 style="background-color: rgba(0, 0, 0, 0.2); text-align: center; padding: 4px 0px; border-radius: 15px;">{{univ.name}}</h2>
+                </div><!-- .col -->
+            </div><!-- .entry-header -->
+        </div><!-- .container -->
+    </div><!-- .page-header-overlay -->
     <div class="container">
         <div class="row">
-            <div class="col-12 offset-lg-1 col-lg-11">
-                <div class="featured-image">
-                    <img src="{{univ.picture.ur}}" alt="{{univ.name}}" style="width: 100%; height: 500px; object-fit: cover;">
-                </div>
-            </div><!-- .col -->
-        </div><!-- .row -->
-
-        <div class="row">
             <div class="col-12 offset-lg-1 col-lg-1">
-                <!-- <div class="post-share">
+                <div class="post-share">
                     <h3>Partager</h3>
 
                     <ul class="flex flex-wrap align-items-center p-0 m-0">
@@ -48,15 +28,14 @@
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                         <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-thumb-tack"></i></a></li>
                     </ul>
-                </div> -->
-            </div>
+                </div><!-- .post-share -->
+            </div><!-- .col -->
 
             <div class="col-12 col-lg-8">
                 <div class="single-course-wrap">
                     <div class="course-info flex flex-wrap align-items-center">
-                        <div class="course-author flex flex-wrap align-items-center mt-3">
+                        <div class="course-author flex flex-wrap justify-content-center align-items-center mt-3">
                             <img src="{{univ.logo.url}}" alt="">
 
                             <div class="author-wrap">
@@ -68,33 +47,19 @@
                         <div class="course-cats mt-3">
                             <label class="m-0">Ville</label>
                             <div class="author-name"><a href="#">Kinshasa</a></div>
-                        </div><!-- .course-cats -->
-
-                        <!-- <div class="course-students mt-3">
-                            <label class="m-0">Student</label>
-                            <div class="author-name"><a href="#">26 (REGISTERED)</a></div>
                         </div>
-
-                        <div class="buy-course mt-3">
-                            <a class="btn" href="#">ADD to cart</a>
-                        </div> -->
                     </div>
 
                     <div class="single-course-cont-section">
 
                         <h2>Description</h2>
 
-                        <p>{{univ.about}}</p>
+                        <p>{{univ.about|linebreaks}}</p>
 
-                        <h2>Who is the target audience?</h2>
+                        <h2>Coordonnées</h2>
 
                         <ul class="p-0 m-0 black-doted">
-                            <!-- <li>Competent and confident with using a computer.</li>
-                            <li>Artists who want to bring their assets alive in a game engine.</li>
-                            <li>Developers who want to re-skill across to coding.</li>
-                            <li>Complete beginners who are willing to work hard.</li>
-                            <li>Existing programmers who want to re-skill to game development.</li> -->
-                            <li>{{univ.contact}}</li>
+                            <li>{{univ.contact|linebreaks}}</li>
                         </ul>
                     </div>
 
@@ -123,33 +88,5 @@
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
-
-    <div class="clients-logo">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
-                    <div class="logo-wrap">
-                        <img src="images/logo-1.png" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="images/logo-2.png" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="images/logo-3.png" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="images/logo-4.png" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="images/logo-5.png" alt="">
-                    </div><!-- .logo-wrap -->
-                </div><!-- .col -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </div><!-- .clients-logo -->
 
 {% endblock %}
