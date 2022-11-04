@@ -13,14 +13,16 @@
                 </div><!-- .col -->
 
                 <div class="col-12 col-lg-6 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
-                    <div class="header-bar-search d-none d-lg-flex">
-                        <form class="flex align-items-stretch">
+                    <div class="header-bar-search">
+                        <form action="" method="get" class="flex align-items-stretch w-100">
+                            {% csrf_token %}
                             <input type="search" placeholder="Tapez votre recherche...">
                             <button type="submit" value="" class="flex justify-content-center align-items-center"><i class="fa fa-search"></i></button>
+                            <span id="close-search" class="flex justify-content-center align-items-center d-md-none bg-danger text-white px-2">x</span>
                         </form>
                     </div><!-- .header-bar-search -->
 
-                    <div class="header-bar-menu">
+                    <div class="header-bar-menu d-none d-lg-block">
                         <ul class="flex justify-content-center align-items-center py-2 pt-md-0">
                             {% if user.is_authenticated %}
                             <li><a class="text-dark" href="{% url 'accounts:logout' %}">Déconnexion</a></li>
@@ -47,13 +49,26 @@
                 <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
                     <nav class="site-navigation flex justify-content-end align-items-center">
                         <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                            <li class="text-center close">x</li>
+                            <div class="hamburger-menu d-lg-none">
+                                <span class="text-dark"></span>
+                                <span class="text-dark"></span>
+                                <span class="text-dark"></span>
+                                <span class="text-dark"></span>
+                            </div>
                             <li class="current-menu-item"><a href="{% url 'home' %}">Accueil</a></li>
-                            <li><a class="text-dark" href="{% url 'univs' %}">Universités</a></li>
+                            <li><a class="text-lg-dark" href="{% url 'univs' %}">Universités</a></li>
                             <li><a class="text-dark" href="#">blog</a></li>
                             <li><a href="#">A_propos</a></li>
                             <li><a class="text-dark" href="{% url 'contact' %}">Contact</a></li>
                             {% if user.is_superuser %}
                             <li><a class="text-dark" href="{% url 'back:add_univ' %}">Admin</a></li>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                            <li><a class="text-dark" href="{% url 'accounts:logout' %}">Déconnexion</a></li>
+                            {% else %}
+                            <li><a class="text-dark" href="{% url 'accounts:register' %}">Inscription</a></li>
+                            <li><a class="text-dark" href="{% url 'accounts:login' %}">Connexion</a></li>
                             {% endif %}
                         </ul>
     
@@ -62,10 +77,10 @@
                             <span class="text-dark"></span>
                             <span class="text-dark"></span>
                             <span class="text-dark"></span>
-                        </div><!-- .hamburger-menu -->
+                        </div>
     
                         <div class="header-bar-cart d-lg-none">
-                            <a href="#" class="flex justify-content-center align-items-center text-dark"><span class="fa fa-search"></span></a>
+                            <span class="fa fa-search text-dark" id="show-search"></span>
                         </div>
                     </nav><!-- .site-navigation -->
                 </div><!-- .col -->

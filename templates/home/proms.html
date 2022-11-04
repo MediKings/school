@@ -12,7 +12,7 @@
         <div class="row pt-3">
             <div class="col-12 col-lg-8">
                 <div class="single-course-wrap">
-
+                   {% if proms %{}
                     <div class="related-courses">
                         <header class="entry-heading flex flex-wrap justify-content-between align-items-center">
                             <h2 class="entry-title">{{proms.count}} Promotions</h2>
@@ -34,6 +34,13 @@
                             {% endfor %}
                         </div><!-- .row -->
                     </div><!-- .related-course -->
+                    {% else %}
+                    <div class="related-courses">
+                        <header class="entry-heading flex flex-wrap justify-content-between align-items-center">
+                            <h2 class="entry-title">Aucune promotion enregistrée</h2>
+                        </header><!-- .entry-heading -->
+                    </div>
+                    {% endif %}
                 </div><!-- .single-course-wrap -->
             </div><!-- .col -->
         </div><!-- .row -->

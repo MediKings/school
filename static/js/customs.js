@@ -8,6 +8,16 @@
         $('.site-navigation').toggleClass('show');
     });
 
+    // Show search-bar
+    $( '#show-search' ).on( 'click', function() {
+        $('.header-bar-search').css({"top": "0px", "transition": "all 200ms"});
+    });
+
+    // Close search-bar
+    $( '#close-search' ).on( 'click', function() {
+        $('.header-bar-search').css({"top": "-60px", "transition": "all 200ms"});
+    });
+
     // Testimonial Slider
     var swiper = new Swiper('.testimonial-slider', {
         slidesPerView: 1,
