@@ -37,17 +37,18 @@
             <div class="col-12 col-lg-6">
                 <div class="contact-form">
                     <h3>Ajouter</h3>
-                    <form>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <label for="id_name">
                             Nom
                             {{form.name}}
                         </label><br>
-                        <img src="" alt="" id="picture_preview"><br>
+                        <!-- <img src="" alt="" id="picture_preview"><br> -->
                         <label for="id_picture">
                             Choisir la photo de couverture
                             {{form.picture}}
                         </label><br>
-                        <img src="" alt="" id="logo_preview"><br>
+                        <!-- <img src="" alt="" id="logo_preview"><br> -->
                         <label for="id_logo">
                             Choisir le logo
                             {{form.logo}}
