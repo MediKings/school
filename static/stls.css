@@ -5,6 +5,7 @@ body {
     font-size: 16px;
     line-height: 1.8;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 img {
@@ -352,6 +353,11 @@ a:hover, a:active {
 @media screen and (max-width: 576px){
     .hero-content-wrap h1 {
         font-size: 32px;
+    }
+
+    .hero-content-wrap {
+        height: 500px;
+        padding-top: 100px;
     }
 }
 
@@ -737,11 +743,11 @@ a.btn:hover {
     color: #19c880;
 }
 
-@media screen and (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
     .ezuca-stats .stats-count {
         width: 100%;
     }
-}
+} */
 
 .ezuca-stats .stats-count span {
     font-size: 36px;

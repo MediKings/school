@@ -5,8 +5,8 @@ __pycache__/
 local_settings.py
 images
 admin
-# db.sqlite3
-# db.sqlite3-journal
-# media
+db.sqlite3
+db.sqlite3-journal
+media
 
 # <django-project-name>/staticfiles/
